@@ -1,0 +1,17 @@
+{
+  "name": "corporate-ai-kimi",
+  "version": "1.0.0",
+  "description": "Corporate AI with Kimi K2.5 on Cloudflare Workers",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "dependencies": {
+    "openclaw": "^1.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

@@ -1,0 +1,33 @@
+name = "corporate-ai-david"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Enable Cloudflare Sandbox (requires Workers Paid plan - $5/month)
+[build]
+command = ""
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+MODEL_PROVIDER = "kimi"
+MODEL_NAME = "kimi-k2-5"
+
+# Secrets (set via wrangler secret put)
+# KIMI_API_KEY = your Kimi API key
+# TELEGRAM_BOT_TOKEN = 8527939205:AAFWI1EtRA2IAyYnsCnvnFeln0-G4xSvBxY
+# MOLTBOT_GATEWAY_TOKEN = random token for admin access
+
+# R2 Storage for persistence
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "corporate-ai-data"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "corporate-ai-david"
+database_id = "4cca3d34-cee7-4bea-8e12-4c80b8ad845c"
+
+# Cron triggers for heartbeat
+[triggers]
+crons = ["*/15 * * * *"]
